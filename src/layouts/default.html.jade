@@ -2,8 +2,8 @@
 - var styles = getBlock('styles')
 
 //- Prettify Syntax Highlighting
-//- scripts.add(["/vendor/prettify.js"])
-//- styles.add(["/vendor/prettify.css"])
+- scripts.add(["/vendor/prettify.js"])
+- styles.add(["/vendor/prettify.css"])
 
 //- jQuery
 - scripts.add(["/vendor/jquery/dist/jquery.js"], {defer:false, async:false})
@@ -18,8 +18,8 @@
 
 
 //- Other Scripts
-//- scripts.add(["/vendor/log.js","/vendor/modernizr.js"], {defer:false, async:false})
-//- scripts.add(["/vendor/ie10-viewport-bug-workaround.js","/vendor/jquery.cubeportfolio.js","/vendor/retina-1.1.0.js","/vendor/theme.js"], {defer:false, async:false})
+- scripts.add(["/vendor/log.js","/vendor/modernizr.js"], {defer:false, async:false})
+- scripts.add(["/vendor/ie10-viewport-bug-workaround.js","/vendor/jquery.cubeportfolio.js","/vendor/retina-1.1.0.js","/vendor/theme.js"], {defer:false, async:false})
 //- Other CSS
 - styles.add(["/styles/cubeportfolio.css","/styles/ionicons.css","/styles/style.css"])
 
@@ -48,36 +48,23 @@ head
     |       
     script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
 
+
 body
-  section#slides
-    ul.slides-container
-      li
-        img(src='assets/img/slide-1.jpg', alt='')
-      |             
-      li
-        img(src='assets/img/slide-2.jpg', alt='')
-      |             
-      li
-        img(src='assets/img/slide-3.jpg', alt='')
-    |          
+  section(id="topmenu")
+    #topmenutext
+      #menubackground
+      img(src='assets/img/logo-60.png', alt='')
+      span UNA Solutions, LLC
+
+  section(id="banner")
     #bannertext
-      h1 LANDING SUMO
+      h1 A Better Place to Work
       |             
       hr.aligncenter
       |             
       h3 A Truly Handsome Bootstrap 3 Theme Crafted For Your Agency
       |             
-      p
-        button.btn.btn-lg.btn-white.btn-design Learn More
-        |  
-        button.btn.btn-lg.btn-clear.btn-design Buy Bundle
     // end:Banner text
-    nav.slides-navigation
-      a.next(href='index.html#')
-        i.ion-ios7-arrow-forward
-      |             
-      a.prev(href='index.html#')
-        i.ion-ios7-arrow-back
   .container
     .row.mtb2.centered
       .col-md-4.w
@@ -464,8 +451,25 @@ body
         'background-position': '50% ' + (-scrollPos / 4) + "px"
       });
       $('#bannertext').css({
-        'margin-top': (scrollPos / 4) + "px",
+        //'margin-top': (scrollPos / 4) + "px",
         'opacity': 1 - (scrollPos / 250)
+      });
+      var opInc = (scrollPos / 400);
+      if (opInc > 1) {
+        opInc = 1;
+        }
+      $('#menubackground').css({
+        'opacity': 0.5 + opInc / 2
+      });
+      var delta = (30 * opInc)
+      $('#topmenutext img').css({
+        'height': 60 - delta
+      });
+      $('#menubackground').css({
+        'height': 75 - delta
+      });
+      $('#banner').css({
+        'background-position-y': '-' + opInc * 100.0
       });
     }
     

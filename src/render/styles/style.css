@@ -219,15 +219,70 @@ input {
 }
 
 /* HERO banner with fixed position */
+#banner {
+  background-attachment: scroll,  fixed;
+  background-color: #666;
+  background-image: url("../assets/img/banner.jpg");
+  background-position: top left,  center center;
+  background-repeat: repeat,  no-repeat;
+  background-size: auto,  cover;
+  color: #fff;
+  padding: 12em 0 20em 0;
+  text-align: center;
+}
+#topmenutext {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: auto;
+    color: #fff;
+    text-align: left;
+    padding: 5px 10px;
+}
+#topmenutext span {
+  z-index: 999;
+  position: relative;
+  color: #594A41;
+  margin-left: 25px;
+  font-size: large;
+  font-weight: 700;
+  top: 6px;
+}
+
+#topmenutext img {
+  position: relative;
+  top: 5px;
+  z-index: 999;
+  left: 10;
+}
+
+#menubackground {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: auto;
+  color: #fff;
+  text-align: left;
+  background-image: url('../assets/img/menu-bg1.png');
+  height: 75px;
+  opacity: 0.5;
+  -webkit-box-shadow: 0px 0px 3px 0px #777;
+  -moz-box-shadow:    0px 0px 3px 0px #777;
+  box-shadow:         0px 0px 3px 0px #777;
+}
 
 #bannertext {
     position: fixed;
-    top: 33%;
+    top: 155px;
     right: 0;
     left: 0;
     z-index: 2;
     margin: auto;
-    max-width: 700px;
+    max-width: 880px;
     color: #fff;
     text-align: center;
 }
