@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "UNA Solutions, LLC": {
+            "applicationId": "mhjmPSwIn8RXYsSg7B6rPddLaJBHG6oHICC8m1Go", 
+            "masterKey": "oTDNfsj36CAo1IvUD3C1Zzq0ibqmDW0j5ZUVsa3P"
+        }, 
+        "_default": {
+            "link": "UNA Solutions, LLC"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.3"
+    }
+}
