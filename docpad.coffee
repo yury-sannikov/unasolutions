@@ -12,16 +12,10 @@ docpadConfig =
     # Specify some site properties
     site:
       # The production url of our website
-      url: "http://website.com"
-
-      # Here are some old site urls that you would like to redirect from
-      oldUrls: [
-        'www.website.com',
-        'website.herokuapp.com'
-      ]
+      url: "http://unasolutions.us"
 
       # The default title of our website
-      title: "Your Website"
+      title: "UNA Solutions, LLC"
 
       # The website description (for SEO)
       description: """

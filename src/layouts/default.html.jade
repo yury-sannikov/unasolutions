@@ -19,7 +19,7 @@
 
 //- Other Scripts
 - scripts.add(["/vendor/log.js","/vendor/modernizr.js"], {defer:false, async:false})
-- scripts.add(["/vendor/ie10-viewport-bug-workaround.js","/vendor/jquery.cubeportfolio.js","/vendor/retina-1.1.0.js","/vendor/theme.js"], {defer:false, async:false})
+- scripts.add(["/vendor/ie10-viewport-bug-workaround.js","/vendor/jquery.cubeportfolio.js","/vendor/retina-1.1.0.js","/vendor/theme.js", "/vendor/jquery.smooth-scroll.min.js"], {defer:false, async:false})
 //- Other CSS
 - styles.add(["/styles/cubeportfolio.css","/styles/ionicons.css","/styles/style.css"])
 
@@ -35,7 +35,7 @@ head
   |     
   link(rel='icon', href='ico/favicon.ico')
   |     
-  title Theme 15 - LandingSumo.com
+  title= site.title
 
   // Styles
   != styles.toHTML()
@@ -49,12 +49,14 @@ head
     script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
 
 
-body
+body(data-spy="scroll" data-offset="0" data-target="#topmenutext")
+  section(id="home")
   section(id="topmenu")
     #topmenutext
       #menubackground
-      img(src='assets/img/logo-60.png', alt='')
-      span UNA Solutions, LLC
+      a.smoothScroll(href="#home")
+        img(src='assets/img/logo-60.png', alt='')
+        span UNA Solutions, LLC
 
   section(id="banner")
     #bannertext
@@ -452,6 +454,7 @@ body
     }
     
     $(document).ready(function () {
+      $('a.smoothScroll').smoothScroll();
       $(window).scroll(function () {
         EasyPeasyParallax();
       });
