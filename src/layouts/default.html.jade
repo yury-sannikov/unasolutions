@@ -422,28 +422,6 @@ body
   != scripts.toHTML()
 
   script.
-    //Superslides
-    $('#slides').superslides({
-      slide_easing: 'easeInOutCubic',
-      slide_speed: 800,
-      pagination: true,
-      hashchange: false,
-      scrollable: true,
-      animation: 'fade'
-    });
-    // Add swipe option
-    document.ontouchmove = function (e) {
-      e.preventDefault();
-    };
-    $('#slides').hammer().on('swipeleft', function () {
-      $(this).superslides('animate', 'next');
-    });
-    $('#slides').hammer().on('swiperight', function () {
-      $(this).superslides('animate', 'prev');
-    });
-  |     
-  |     
-  script.
     // Banner text add parallax efect and fade
     function EasyPeasyParallax() {
       scrollPos = $(this).scrollTop();
@@ -452,21 +430,21 @@ body
       });
       $('#bannertext').css({
         //'margin-top': (scrollPos / 4) + "px",
-        'opacity': 1 - (scrollPos / 250)
+        'opacity': 1.0 - (scrollPos / 250.0)
       });
-      var opInc = (scrollPos / 400);
-      if (opInc > 1) {
-        opInc = 1;
+      var opInc = (scrollPos / 400.0);
+      if (opInc > 1.0) {
+        opInc = 1.0;
         }
       $('#menubackground').css({
-        'opacity': 0.5 + opInc / 2
+        'opacity': 0.5 + opInc / 2.0
       });
-      var delta = (30 * opInc)
+      var delta = (30.0 * opInc)
       $('#topmenutext img').css({
-        'height': 60 - delta
+        'height': 60.0 - delta
       });
       $('#menubackground').css({
-        'height': 75 - delta
+        'height': 75.0 - delta
       });
       $('#banner').css({
         'background-position-y': '-' + opInc * 100.0
