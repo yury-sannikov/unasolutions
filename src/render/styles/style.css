@@ -348,6 +348,11 @@ input {
     opacity: 0.8;
 }
 
+.bare-icon {
+  font-size: 65px;
+}
+
+
 /* CIRCLE Icons */
 .circle-icon {
 	width: 120px;

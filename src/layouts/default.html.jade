@@ -12,6 +12,9 @@
 - scripts.add(["/vendor/components-bootstrap/js/bootstrap.js"], {defer:false, async:false})
 - styles.add(["/vendor/components-bootstrap/css/bootstrap.css"])
 
+//- FA
+- styles.add(["/vendor/fontawesome/css/font-awesome.min.css"])
+
 //- Superslides
 - scripts.add(["/vendor/superslides/dist/jquery.superslides.js"], {defer:false, async:false})
 - styles.add(["/vendor/superslides/dist/stylesheets/superslides.css"])
@@ -64,43 +67,9 @@ body(data-spy="scroll" data-offset="0" data-target="#topmenutext")
       |             
       hr.aligncenter
       |             
-      h3 A Truly Handsome Bootstrap 3 Theme Crafted For Your Agency
-      |             
     // end:Banner text
   .container
-    .row.mtb2.centered
-      .col-md-4.w
-        .circle-icon
-          .icon.ion-ios7-gear-outline
-        | &#x9;&#x9;&#x9;&#x9;
-        h5 Working Theme
-        | &#x9;&#x9;&#x9;&#x9;
-        hr.aligncenter
-        | &#x9;&#x9;&#x9;&#x9;
-        p
-          | There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
-      | &#x9;&#x9;&#x9;
-      .col-md-4.w
-        .circle-icon
-          .icon.ion-ios7-analytics-outline
-        | &#x9;&#x9;&#x9;&#x9;
-        h5 Important Stats
-        | &#x9;&#x9;&#x9;&#x9;
-        hr.aligncenter
-        | &#x9;&#x9;&#x9;&#x9;
-        p
-          | There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
-      | &#x9;&#x9;&#x9;
-      .col-md-4.w
-        .circle-icon
-          .icon.ion-ios7-camera-outline
-        | &#x9;&#x9;&#x9;&#x9;
-        h5 Awesome Design
-        | &#x9;&#x9;&#x9;&#x9;
-        hr.aligncenter
-        | &#x9;&#x9;&#x9;&#x9;
-        p
-          | There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
+    = partial('bannerText')
   // /.container
   #portfolio
     #grid-container.cbp-l-grid-fullScreen
