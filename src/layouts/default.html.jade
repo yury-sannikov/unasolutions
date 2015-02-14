@@ -71,57 +71,8 @@ body(data-spy="scroll" data-offset="0" data-target="#topmenutext")
   .container
     = partial('bannerText')
   // /.container
-  #portfolio
-    #grid-container.cbp-l-grid-fullScreen
-      ul
-        li.cbp-item.identity
-          a.cbp-caption.cbp-lightbox(data-title='Image', href='assets/img/portfolio/1.jpg')
-            .cbp-caption-defaultWrap
-              img.img-responsive(src='assets/img/portfolio/1.jpg', alt='')
-            |                     
-            .cbp-caption-activeWrap
-              .cbp-l-caption-alignCenter
-                .cbp-l-caption-body
-                  .cbp-l-caption-title Image LightBox
-                  |                              
-                  .cbp-l-caption-desc by John Doe
-        // end:Item
-        li.cbp-item.web-design
-          a.cbp-caption.cbp-lightbox(data-title='Image', href='assets/img/portfolio/2.jpg')
-            .cbp-caption-defaultWrap
-              img.img-responsive(src='assets/img/portfolio/2.jpg', alt='')
-            |                     
-            .cbp-caption-activeWrap
-              .cbp-l-caption-alignCenter
-                .cbp-l-caption-body
-                  .cbp-l-caption-title Image LightBox
-                  |                              
-                  .cbp-l-caption-desc by John Doe
-        // end:Item
-        li.cbp-item.graphic.identity
-          a.cbp-caption.cbp-lightbox(data-title='Image', href='assets/img/portfolio/3.jpg')
-            .cbp-caption-defaultWrap
-              img.img-responsive(src='assets/img/portfolio/3.jpg', alt='')
-            |                     
-            .cbp-caption-activeWrap
-              .cbp-l-caption-alignCenter
-                .cbp-l-caption-body
-                  .cbp-l-caption-title Image LightBox
-                  |                              
-                  .cbp-l-caption-desc by John Doe
-        // end:Item
-        li.cbp-item.graphic.identity
-          a.cbp-caption.cbp-lightbox(data-title='Image', href='assets/img/portfolio/4.jpg')
-            .cbp-caption-defaultWrap
-              img.img-responsive(src='assets/img/portfolio/4.jpg', alt='')
-            |                     
-            .cbp-caption-activeWrap
-              .cbp-l-caption-alignCenter
-                .cbp-l-caption-body
-                  .cbp-l-caption-title Image LightBox
-                  |                              
-                  .cbp-l-caption-desc by John Doe
-        // end:Item
+  section(id="midpick")
+    = partial('midpic/pics')
   .container
     .row.mtb.centered
       .col-md-6.col-md-offset-3.w
@@ -399,10 +350,18 @@ body(data-spy="scroll" data-offset="0" data-target="#topmenutext")
       $('#slider').css({
         'background-position': '50% ' + (-scrollPos / 4) + "px"
       });
-      $('#bannertext').css({
-        //'margin-top': (scrollPos / 4) + "px",
-        'opacity': 1.0 - (scrollPos / 250.0)
-      });
+      var bannerOp = 1.0 - (scrollPos / 250.0);
+      if (bannerOp > 0) {
+        $('#bannertext').css({
+          'opacity': bannerOp,
+          'display': 'inherit'
+        });
+      } else {
+        $('#bannertext').css({
+          'display': 'none'
+        });
+      }
+
       var opInc = (scrollPos / 400.0);
       if (opInc > 1.0) {
         opInc = 1.0;

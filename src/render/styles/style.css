@@ -17,7 +17,7 @@
 * { 
 	margin: 0;
 	padding: 0px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'verdana', 'geneva', 'sans-serif';
 } 
 body { 
 	background: #fff; 
@@ -26,15 +26,14 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'verdana', 'geneva', 'sans-serif';
 	font-weight: 300;
 }
-
 
 p { 
 	padding: 0; 
 	margin-bottom: 12px; 
-    font-family: 'Lato', sans-serif;
+    font-family: 'verdana', 'geneva', 'sans-serif';
 	font-weight: 300;
 	font-size: 16px; 
 	line-height: 26px;
@@ -218,6 +217,21 @@ input {
     opacity: 0.9;
 }
 
+#midpick {
+  background-image: url('../assets/img/header_13.jpg');
+  padding: 12em 0 20em 0;
+  background-size: 2200px;
+  background-position-y: -90px;
+  background-position-x: -460px;
+}
+
+@media(max-width:600px) {
+  #midpick {
+    background-position-y: -90px;
+    background-position-x: -670px;
+  }
+}
+
 /* HERO banner with fixed position */
 #banner {
   background-attachment: scroll,  fixed;
@@ -349,7 +363,8 @@ input {
 }
 
 .bare-icon {
-  font-size: 65px;
+  font-size: 37px;
+  margin-top: 40px;
 }
 
 
