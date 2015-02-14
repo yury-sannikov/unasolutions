@@ -75,7 +75,6 @@ docpadConfig =
     posts: (database) ->
       database.findAllLive({relativeOutDirPath:'posts'},[date:-1])
 
-
   # DocPad Events
   # =============
 
