@@ -131,6 +131,7 @@ input {
 	width: 65%;
 	text-align: left;
 	margin-right: 2px;
+  color: black;
 }
 
 .subscribe-submit {
@@ -288,7 +289,9 @@ input {
   -moz-box-shadow:    0px 0px 3px 0px #777;
   box-shadow:         0px 0px 3px 0px #777;
 }
-
+.cv-link {
+  float: right;
+}
 #bannertext {
     position: fixed;
     top: 155px;

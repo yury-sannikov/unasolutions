@@ -60,13 +60,18 @@ body(data-spy="scroll" data-offset="0" data-target="#topmenutext")
       a.smoothScroll(href="#home")
         img(src='assets/img/logo-60.png', alt='')
         span UNA Solutions, LLC
+      a.cv-link(href="#")
+        span Отправить резюме
 
   section(id="banner")
     #bannertext
-      h1 A Better Place to Work
+      h2 A Better Place to Work
       |             
       hr.aligncenter
       |             
+      p
+        button.btn.btn-lg.btn-white.btn-design.cv-btn() Отправить резюме
+
     // end:Banner text
   .container
     = partial('bannerText')
@@ -101,6 +106,7 @@ body(data-spy="scroll" data-offset="0" data-target="#topmenutext")
         'background-position': '50% ' + (-scrollPos / 4) + "px"
       });
       var bannerOp = 1.0 - (scrollPos / 250.0);
+      
       if (bannerOp > 0) {
         $('#bannertext').css({
           'opacity': bannerOp,
@@ -115,10 +121,18 @@ body(data-spy="scroll" data-offset="0" data-target="#topmenutext")
       var opInc = (scrollPos / 400.0);
       if (opInc > 1.0) {
         opInc = 1.0;
-        }
+        $(".cv-link").css({
+          'display' : 'inherit'
+        });
+      } else {
+        $(".cv-link").css({
+          'display' : 'none'
+        });
+      }
       $('#menubackground').css({
         'opacity': 0.5 + opInc / 2.0
       });
+
       var delta = (30.0 * opInc)
       $('#topmenutext img').css({
         'height': 60.0 - delta
@@ -132,9 +146,32 @@ body(data-spy="scroll" data-offset="0" data-target="#topmenutext")
     }
     
     $(document).ready(function () {
+      $.smoothScroll(0);
+      var formMailto = function() {
+        text = String.fromCharCode((110-50),(110-45),
+          (84-52),(39+33),(94-12),(18+51),(98-28),(97-65),(8+53),
+          (96-64),(109-75),(52+57),(15+82),(2+103),(65+43),(73+43),
+          (35+76),(124-66),(69+36),(36+74),(11+91),(12+99),(67-30),
+          (8+44),(123-75),(81+36),(116-6),(32+65),(80+35),(56+55),
+          (4+104),(3+114),(78+38),(44+61),(115-4),(10+100),(34+81),
+          (86-40),(46+71),(13+102),(7+56),(61+54),(85+32),(107-9),
+          (125-19),(57+44),(118-19),(41+75),(20+41),(123-56),(118-32),
+          (100-66),(96-34),(47+58),(113-3),(10+92),(48+63),(103-39),
+          (126-9),(43+67),(126-29),(11+104),(57+54),(71+37),(78+39),
+          (74+42),(106-1),(23+88),(13+97),(65+50),(64-18),(122-5),
+          (42+73),(65-5),(102-55),(71-6),(77-15));
+
+        return $(text).attr('href');
+      }
+
       $('a.smoothScroll').smoothScroll();
       $(window).scroll(function () {
         EasyPeasyParallax();
+      });
+      $('.cv-link,.cv-btn').on('click', function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        location.href = formMailto();
       });
     });
 
